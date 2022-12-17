@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CategoryProducts from "./components/CategoryProducts";
 import "./Home.css";
 
 const Home = () => {
@@ -15,8 +16,8 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Home</h1>
+        <div className="container">
+            <CategoryProducts categoryId="1" />
         </div>
     );
 };

@@ -3,18 +3,20 @@ import { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./navbar/Navbar";
 import Home from "./home/Home";
+import Register from "./auth/Register";
+import Login from "./auth/Login";
 import Error from "./error/Error";
 
 import "./App.css";
 
 function App() {
-    const { userName, setUserName } = useContext(UserContext);
+    const { userEmail, setUserEmail } = useContext(UserContext);
     const [loading, setLoading] = useState(true);
 
     const fetchData = async () => {
         const token = localStorage.getItem("shopsight_usertoken");
         if (!token) {
-            setUserName(null);
+            setUserEmail(null);
             setLoading(false);
             return;
         }
@@ -27,22 +29,30 @@ function App() {
         });
         const data = await res.json();
         if (res.status === 200) {
-            setUserName(data.user.username);
+            setUserEmail(data.user.email);
         } else {
-            setUserName(null);
+            setUserEmail(null);
         }
         setLoading(false);
     };
     useEffect(() => {
-        // fetchData();
-    }, [userName]);
+        fetchData();
+    }, [userEmail]);
 
     return (
         <div className="App">
             <Router>
-                <Navbar userName={userName} />
+                <Navbar userEmail={userEmail} />
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
+                    <Route
+                        path="/register"
+                        element={userEmail ? <Navigate to="/" /> : <Register />}
+                    ></Route>
+                    <Route
+                        path="/login"
+                        element={userEmail ? <Navigate to="/" /> : <Login />}
+                    ></Route>
                     <Route path="*" element={<Error />}></Route>
                 </Routes>
             </Router>
