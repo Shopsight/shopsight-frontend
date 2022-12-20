@@ -1,10 +1,18 @@
 import { UserContext } from "./context/UserContext";
 import { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+
+import Announcement from "./announcement/Announcement";
 import Navbar from "./navbar/Navbar";
+
+//home
 import Home from "./home/Home";
+//auth
 import Register from "./auth/Register";
 import Login from "./auth/Login";
+//brand
+import Brand from "./brand/Brand";
+//error
 import Error from "./error/Error";
 
 import "./App.css";
@@ -42,6 +50,7 @@ function App() {
     return (
         <div className="App">
             <Router>
+                <Announcement />
                 <Navbar userEmail={userEmail} />
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
@@ -53,6 +62,7 @@ function App() {
                         path="/login"
                         element={userEmail ? <Navigate to="/" /> : <Login />}
                     ></Route>
+                    <Route path="/brand/:id" element={<Brand />}></Route>
                     <Route path="*" element={<Error />}></Route>
                 </Routes>
             </Router>

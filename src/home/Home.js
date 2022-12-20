@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import CategoryProducts from "./components/CategoryProducts";
+import Brands from "./components/Brands";
+// import Footer from "./components/Footer";
+// import Products from "./components/Products";
+import Slider from "./components/Slider";
 import "./Home.css";
 
 const Home = () => {
@@ -16,9 +20,12 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="container">
+        <>
+            <Slider />
+            <Brands />
             <CategoryProducts categoryId="1" />
-        </div>
+            <CategoryProducts categoryId="1" />
+        </>
     );
 };
 
