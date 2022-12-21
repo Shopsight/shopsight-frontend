@@ -20,9 +20,7 @@ const Navigation = ({ userEmail }) => {
                 </div>
                 <div className="navbar-right">
                     {userEmail ? (
-                        <>
-                            <div className="navbar-menu-item">LOGOUT</div>
-                        </>
+                        <div className="navbar-menu-item">LOGOUT</div>
                     ) : (
                         <>
                             <Link to="/register" className="navbar-menu-item">
@@ -31,9 +29,6 @@ const Navigation = ({ userEmail }) => {
                             <Link to="/login" className="navbar-menu-item">
                                 SIGN IN
                             </Link>
-                            <div className="navbar-menu-item">
-                                <FaCartPlus style={{ fontSize: 20 }}></FaCartPlus>
-                            </div>
                         </>
                     )}
                 </div>

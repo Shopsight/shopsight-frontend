@@ -55,23 +55,23 @@
 
 @media only screen and (max-width: 380px) {
     .navbar-container {
-        height: "50px";
+        height: 50px;
     }
     .navbar-wrapper {
-        padding: "10px 0";
+        padding: 10px 0;
     }
     .navbar-input {
-        width: "50px";
+        width: 50px;
     }
     .navbar-logo {
-        font-size: "24px";
+        font-size: 24px;
     }
     .navbar-right {
         flex: 2;
-        justify-content: "center";
+        justify-content: center;
     }
     .navbar-menu-items {
-        font-size: "12px";
-        margin-left: "10px";
+        font-size: 12px;
+        margin-left: 10px;
     }
 }
