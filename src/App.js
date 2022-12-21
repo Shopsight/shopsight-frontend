@@ -14,6 +14,8 @@ import Login from "./auth/Login";
 import Brand from "./brand/Brand";
 //error
 import Error from "./error/Error";
+//footer
+import Footer from "./footer/Footer";
 
 import "./App.css";
 
@@ -65,6 +67,7 @@ function App() {
                     <Route path="/brand/:id" element={<Brand />}></Route>
                     <Route path="*" element={<Error />}></Route>
                 </Routes>
+                <Footer />
             </Router>
         </div>
     );
