@@ -2,7 +2,6 @@ import React from "react";
 import Brands from "./components/Brands";
 import Slider from "./components/Slider";
 import Categories from "./components/Categories";
-// import Products from "./components/Products";
 import "./Home.css";
 
 const Home = () => {

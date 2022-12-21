@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { popularProducts } from "../data";
-import Product from "./components/Product";
-import "./Brand.css";
+import ProductCard from "../components/ProductCard";
 
 const Brand = () => {
     const location = useLocation();
@@ -11,7 +9,7 @@ const Brand = () => {
 
     const fetchProducts = async () => {
         try {
-            const url = `${process.env.REACT_APP_SERVER_URL}/brand/${brandId}`;
+            const url = `${process.env.REACT_APP_SERVER_URL}/api/brand/products/${brandId}`;
             const res = await fetch(url);
             const data = await res.json();
             setProducts(data.products);
@@ -21,15 +19,15 @@ const Brand = () => {
     };
 
     useEffect(() => {
-        // fetchProducts();
+        fetchProducts();
     }, []);
 
     return (
         <div>
-            <h1 className="brand-title">Raymond</h1>
-            <div className="brand-products">
-                {popularProducts.map((item) => (
-                    <Product item={item} key={item.id} />
+            <h1 className="products-title">Raymond</h1>
+            <div className="products-container">
+                {products.map((product, index) => (
+                    <ProductCard product={product} key={index} />
                 ))}
             </div>
         </div>

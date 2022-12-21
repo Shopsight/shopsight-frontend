@@ -3,8 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import Announcement from "./announcement/Announcement";
+//navbar
 import Navbar from "./navbar/Navbar";
-
 //home
 import Home from "./home/Home";
 //auth
@@ -12,6 +12,8 @@ import Register from "./auth/Register";
 import Login from "./auth/Login";
 //brand
 import Brand from "./brand/Brand";
+//product
+import Product from "./product/Product";
 //error
 import Error from "./error/Error";
 //footer
@@ -49,6 +51,7 @@ function App() {
         fetchData();
     }, [userEmail]);
 
+    if (loading) return <h1>Loading...</h1>;
     return (
         <div className="App">
             <Router>
@@ -65,6 +68,7 @@ function App() {
                         element={userEmail ? <Navigate to="/" /> : <Login />}
                     ></Route>
                     <Route path="/brand/:id" element={<Brand />}></Route>
+                    <Route path="/product/:id" element={<Product />}></Route>
                     <Route path="*" element={<Error />}></Route>
                 </Routes>
                 <Footer />
