@@ -1,8 +1,6 @@
 import { UserContext } from "./context/UserContext";
 import { useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-
-import Announcement from "./announcement/Announcement";
 //navbar
 import Navbar from "./navbar/Navbar";
 //home
@@ -12,6 +10,7 @@ import Register from "./auth/Register";
 import Login from "./auth/Login";
 //brand
 import Brand from "./brand/Brand";
+import BrandProduct from "./brand/BrandProduct";
 //product
 import Product from "./product/Product";
 //error
@@ -55,7 +54,6 @@ function App() {
     return (
         <div className="App">
             <Router>
-                <Announcement />
                 <Navbar userEmail={userEmail} setUserEmail={setUserEmail} />
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
@@ -67,7 +65,8 @@ function App() {
                         path="/login"
                         element={userEmail ? <Navigate to="/" /> : <Login />}
                     ></Route>
-                    <Route path="/brand/:id" element={<Brand />}></Route>
+                    <Route path="/brands" element={<Brand />}></Route>
+                    <Route path="/brand/:id" element={<BrandProduct />}></Route>
                     <Route path="/product/:id" element={<Product />}></Route>
                     <Route path="*" element={<Error />}></Route>
                 </Routes>

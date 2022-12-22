@@ -15,18 +15,6 @@
     align-items: center;
 }
 
-.navbar-input {
-    border: none;
-}
-
-.navbar-search-container {
-    border: 0.5px solid lightgray;
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-    padding: 5px;
-}
-
 .navbar-center {
     flex: 1;
     text-align: center;
@@ -49,27 +37,21 @@
 .navbar-menu-item {
     font-size: 14px;
     cursor: pointer;
-    margin-left: 25px;
+    margin: 0 12px;
     color: #000;
     text-decoration: underline;
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 500px) {
     .navbar-container {
         height: 50px;
     }
     .navbar-wrapper {
         padding: 10px 0;
-    }
-    .navbar-input {
-        width: 50px;
+        height: 50px;
     }
     .navbar-logo {
         font-size: 24px;
-    }
-    .navbar-right {
-        flex: 2;
-        justify-content: center;
     }
     .navbar-menu-items {
         font-size: 12px;

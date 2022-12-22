@@ -1,6 +1,6 @@
 .auth-container {
     width: 100%;
-    height: calc(100vh - 90px);
+    height: calc(100vh - 60px);
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
         url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
             center;
@@ -11,7 +11,7 @@
 }
 
 .auth-wrapper {
-    width: 25%;
+    width: max(25%, 275px);
     padding: 20px;
     background-color: white;
 }

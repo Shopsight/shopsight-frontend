@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import { FaSearch } from "react-icons/fa";
 
 const Navigation = ({ userEmail, setUserEmail }) => {
     const navigate = useNavigate();
@@ -16,10 +15,12 @@ const Navigation = ({ userEmail, setUserEmail }) => {
         <div className="navbar-container">
             <div className="navbar-wrapper">
                 <div className="navbar-left">
-                    <div className="navbar-search-container">
-                        <input className="navbar-input" placeholder="Search" />
-                        <FaSearch style={{ color: "gray", fontSize: 11 }} />
-                    </div>
+                    <Link to="/" className="navbar-menu-item">
+                        HOME
+                    </Link>
+                    <Link to="/brands" className="navbar-menu-item">
+                        BRANDS
+                    </Link>
                 </div>
                 <div className="navbar-center">
                     <Link to="/" className="navbar-logo">
