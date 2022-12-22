@@ -56,7 +56,7 @@ function App() {
         <div className="App">
             <Router>
                 <Announcement />
-                <Navbar userEmail={userEmail} />
+                <Navbar userEmail={userEmail} setUserEmail={setUserEmail} />
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
                     <Route

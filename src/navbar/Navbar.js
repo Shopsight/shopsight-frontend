@@ -1,9 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { FaSearch } from "react-icons/fa";
 
-const Navigation = ({ userEmail }) => {
+const Navigation = ({ userEmail, setUserEmail }) => {
+    const navigate = useNavigate();
+
+    const logout = () => {
+        localStorage.removeItem("shopsight_usertoken");
+        setUserEmail(null);
+        navigate("/");
+    };
+
     return (
         <div className="navbar-container">
             <div className="navbar-wrapper">
@@ -20,7 +28,9 @@ const Navigation = ({ userEmail }) => {
                 </div>
                 <div className="navbar-right">
                     {userEmail ? (
-                        <div className="navbar-menu-item">LOGOUT</div>
+                        <div onClick={logout} className="navbar-menu-item">
+                            LOGOUT
+                        </div>
                     ) : (
                         <>
                             <Link to="/register" className="navbar-menu-item">
