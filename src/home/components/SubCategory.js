@@ -1,21 +1,21 @@
 import React from "react";
-import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import "./SubCategory.css";
 
 const SubCategory = ({ subCategory }) => {
     return (
-        <div className="product-card-container">
-            <div className="product-card-circle" />
+        <Link to={`/category/${subCategory.id}`} className="sub-product-card-container">
+            <div className="sub-product-card-circle" />
             <img
                 src={subCategory.imageLink}
                 alt={subCategory.subCatName}
-                className="product-card-image"
+                className="sub-product-card-image"
             />
-            <div className="product-card-info">
-                <div className="product-card-icon">
-                    <FaSearch />
-                </div>
+            <div className="sub-product-card-info"></div>
+            <div className="sub-product-card-details">
+                <div className="sub-product-card-name">{subCategory.subCatName}</div>
             </div>
-        </div>
+        </Link>
     );
 };
 

@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: linear-gradient(180deg, #e2f1ff, transparent);
 }
 
 .navbar-left {
@@ -40,6 +41,7 @@
     margin: 0 12px;
     color: #000;
     text-decoration: underline;
+    font-weight: 500;
 }
 
 @media only screen and (max-width: 500px) {

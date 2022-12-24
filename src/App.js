@@ -11,6 +11,8 @@ import Login from "./auth/Login";
 //brand
 import Brand from "./brand/Brand";
 import BrandProduct from "./brand/BrandProduct";
+//category
+import CategoryProduct from "./category/CategoryProduct";
 //product
 import Product from "./product/Product";
 //error
@@ -67,6 +69,7 @@ function App() {
                     ></Route>
                     <Route path="/brands" element={<Brand />}></Route>
                     <Route path="/brand/:id" element={<BrandProduct />}></Route>
+                    <Route path="/category/:id" element={<CategoryProduct />}></Route>
                     <Route path="/product/:id" element={<Product />}></Route>
                     <Route path="*" element={<Error />}></Route>
                 </Routes>
