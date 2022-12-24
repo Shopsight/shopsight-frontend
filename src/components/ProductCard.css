@@ -1,7 +1,6 @@
 .product-card-container {
     width: 225px;
     text-align: left;
-    overflow: hidden;
     display: inline-block;
     margin: 0 20px 30px;
 }
@@ -9,13 +8,17 @@
 .product-card-image {
     display: flex;
     align-items: center;
-    /* width: 210px; */
     height: 280px;
     background: #ffe5e5;
+    transition: 0.2s ease;
 }
 
 .product-card-image img {
     width: 100%;
+}
+
+.product-card-image:hover {
+    box-shadow: 0 2px 16px 4px rgba(40, 44, 63, 0.07);
 }
 
 .product-card-info {
