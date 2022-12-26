@@ -10,6 +10,7 @@ const Categories = () => {
             const res = await fetch(url);
             const data = await res.json();
             setCategories(data.categories);
+            console.log(data.categories);
         } catch (err) {
             setCategories({});
         }
@@ -26,15 +27,19 @@ const Categories = () => {
                     <h1 className="products-title">{category[0]}</h1>
                     <h3 className="product-gen">Mens</h3>
                     <div className="products-container">
-                        {category[1].map((subCategory, idx) => (
-                            <SubCategory key={idx} subCategory={subCategory} />
-                        ))}
+                        {category[1]
+                            .filter((cat) => cat.type === 1)
+                            .map((subCategory, idx) => (
+                                <SubCategory key={idx} subCategory={subCategory} />
+                            ))}
                     </div>
                     <h3 className="product-gen">Women</h3>
                     <div className="products-container">
-                        {category[1].map((subCategory, idx) => (
-                            <SubCategory key={idx} subCategory={subCategory} />
-                        ))}
+                        {category[1]
+                            .filter((cat) => cat.type === 0)
+                            .map((subCategory, idx) => (
+                                <SubCategory key={idx} subCategory={subCategory} />
+                            ))}
                     </div>
                 </div>
             ))}

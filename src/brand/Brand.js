@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
+import BrandCard from "./components/BrandCard";
+import "./Brand.css";
 
 const Brand = () => {
     const [brands, setBrands] = useState([]);
     const fetchBrands = async () => {
         try {
-        } catch (err) {}
+            const url = `${process.env.REACT_APP_SERVER_URL}/api/brand/all`;
+            const res = await fetch(url);
+            const data = await res.json();
+            setBrands(data.brands);
+        } catch (err) {
+            // setBrands([]);
+        }
     };
 
     useEffect(() => {
@@ -13,7 +21,12 @@ const Brand = () => {
 
     return (
         <div>
-            <h1>Brand</h1>
+            <h1 className="brands-title">Brands</h1>
+            <div className="brands-card-container">
+                {brands.map((brand, index) => (
+                    <BrandCard key={index} brand={brand} />
+                ))}
+            </div>
         </div>
     );
 };
