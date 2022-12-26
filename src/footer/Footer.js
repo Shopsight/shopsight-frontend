@@ -1,12 +1,6 @@
-import {
-    FaInstagram,
-    FaTwitter,
-    FaFacebookF,
-    FaPinterestP,
-    FaMailchimp,
-    FaPhoneAlt,
-    FaBroom,
-} from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaFacebookF, FaPinterestP, FaPhoneAlt } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+import { IoLocationSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "./Footer.css";
@@ -64,13 +58,13 @@ const Footer = () => {
             <div className="footer-right">
                 <div className="footer-title">Contact</div>
                 <div className="footer-contact-item">
-                    <FaBroom /> Raipur, India 493221
+                    <IoLocationSharp /> Raipur, India 493221
                 </div>
                 <div className="footer-contact-item">
                     <FaPhoneAlt /> +91 9179054211
                 </div>
                 <div className="footer-contact-item">
-                    <FaMailchimp /> shubhamank002@gmail.com
+                    <MdOutlineEmail /> shubhamank002@gmail.com
                 </div>
                 <img
                     src="https://i.ibb.co/Qfvn4z6/payment.png"
