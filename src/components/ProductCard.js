@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 import "./ProductCard.css";
 
 // const ProductCard = ({ product }) => {
@@ -24,9 +25,14 @@ const ProductCard = ({ product }) => {
                 <img src={product.imageLink} alt={product.name} />
             </Link>
             <div className="product-card-info">
-                <div className="product-card-brand">Raymond</div>
-                <div className="product-card-name">{product.name}</div>
-                <div className="product-card-price">Rs. {product.price}</div>
+                <div className="product-card-info-left">
+                    <div className="product-card-brand">Raymond</div>
+                    <div className="product-card-name">{product.name}</div>
+                    <div className="product-card-price">Rs. {product.price}</div>
+                </div>
+                <div className="product-card-right">
+                    <BsHeartFill />
+                </div>
             </div>
         </div>
     );

@@ -44,7 +44,7 @@ const Login = () => {
         <div className="auth-container">
             <div className="auth-wrapper">
                 <h1 className="auth-title">SIGN IN</h1>
-                <form onSubmit={userLogin} method="POST" className="auth-form">
+                <form onSubmit={userLogin} className="auth-form">
                     <input
                         className="auth-input"
                         name="email"

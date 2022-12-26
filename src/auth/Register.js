@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
-import logo from "../images/logo.png";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -9,7 +8,8 @@ const Register = () => {
     const handleInput = (e) => setUser({ ...user, [e.target.name]: e.target.value });
     const { setUserEmail } = useContext(UserContext);
 
-    const userRegister = async () => {
+    const userRegister = async (e) => {
+        e.preventDefault();
         try {
             const { name, email, password, cpassword } = user;
             const url = `${process.env.REACT_APP_SERVER_URL}/api/auth/register`;
@@ -20,7 +20,7 @@ const Register = () => {
             });
             const data = await res.json();
             if (res.status === 200) {
-                setUserEmail(data.userEmail);
+                setUserEmail(data.email);
                 localStorage.setItem("shopsight_usertoken", data.accessToken);
                 navigate("/");
             } else {
@@ -35,7 +35,7 @@ const Register = () => {
         <div className="auth-container">
             <div className="auth-wrapper">
                 <h1 className="auth-title">SIGN IN</h1>
-                <form onSubmit={userRegister} method="POST" className="auth-form">
+                <form onSubmit={userRegister} className="auth-form">
                     <input
                         className="auth-input"
                         name="name"
@@ -49,7 +49,7 @@ const Register = () => {
                         className="auth-input"
                         name="email"
                         type="text"
-                        id="name"
+                        id="email"
                         placeholder="e-mail"
                         value={user.email}
                         onChange={handleInput}

@@ -25,6 +25,8 @@
     background: #fff;
     padding: 0 10px;
     margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .product-card-brand {
@@ -52,4 +54,9 @@
 .product-card-price {
     margin: 6px 0;
     font-weight: 600;
+}
+
+.product-card-right svg {
+    font-size: 20px;
+    color: #fd2f2f;
 }

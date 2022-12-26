@@ -10,7 +10,6 @@ const Categories = () => {
             const res = await fetch(url);
             const data = await res.json();
             setCategories(data.categories);
-            console.log(data.categories);
         } catch (err) {
             setCategories({});
         }
