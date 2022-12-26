@@ -4,8 +4,9 @@ export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
     const [userEmail, setUserEmail] = useState(null);
+    const [favourites, setFavourites] = useState(null);
     return (
-        <UserContext.Provider value={{ userEmail, setUserEmail }}>
+        <UserContext.Provider value={{ userEmail, setUserEmail, favourites, setFavourites }}>
             {props.children}
         </UserContext.Provider>
     );

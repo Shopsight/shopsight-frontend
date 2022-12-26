@@ -23,13 +23,14 @@ import Footer from "./footer/Footer";
 import "./App.css";
 
 function App() {
-    const { userEmail, setUserEmail } = useContext(UserContext);
+    const { userEmail, setUserEmail, setFavourites } = useContext(UserContext);
     const [loading, setLoading] = useState(true);
 
     const fetchData = async () => {
         const token = localStorage.getItem("shopsight_usertoken");
         if (!token) {
             setUserEmail(null);
+            setFavourites(null);
             setLoading(false);
             return;
         }
@@ -43,6 +44,8 @@ function App() {
         const data = await res.json();
         if (res.status === 200) {
             setUserEmail(data.user.email);
+            if (data.user.favourites === null) setFavourites(null);
+            else setFavourites(new Set(JSON.parse(data.user.favourites)));
         } else {
             setUserEmail(null);
         }
