@@ -14,6 +14,19 @@ body {
 
 .products-title {
     margin: 20px;
+    letter-spacing: 5px;
+    /* text-align: center; */
+    /* background: linear-gradient(180deg, #616161, transparent); */
+    /* background: radial-gradient(#ffffff, #e8eeff); */
+    /* background: radial-gradient(#ffffff, #f3f6ff); */
+    /* padding: 10px 0; */
+}
+
+.product-gen {
+    color: grey;
+    margin: 20px;
+    margin-bottom: 0;
+    text-transform: uppercase;
 }
 
 .products-container {

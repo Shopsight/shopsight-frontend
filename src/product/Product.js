@@ -3,15 +3,6 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import "./Product.css";
 
-const FilterColor = styled.div`
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: ${(props) => props.color};
-    margin: 0px 5px;
-    cursor: pointer;
-`;
-
 const Product = () => {
     const location = useLocation();
     const productId = location.pathname.split("/")[2];
@@ -52,12 +43,6 @@ const Product = () => {
                     <p className="product-description">{product.description}</p>
                     <span className="product-price">$ {product.price}</span>
                     <div className="product-filter-container">
-                        <div className="product-filter">
-                            <div className="product-filter-title">Color</div>
-                            <FilterColor color="black" />
-                            <FilterColor color="darkblue" />
-                            <FilterColor color="gray" />
-                        </div>
                         <div className="product-filter">
                             <div className="product-filter-title">Size</div>
                             <select className="product-filter-size">

@@ -24,6 +24,13 @@ const Categories = () => {
             {Object.entries(categories).map((category, index) => (
                 <div key={index}>
                     <h1 className="products-title">{category[0]}</h1>
+                    <h3 className="product-gen">Mens</h3>
+                    <div className="products-container">
+                        {category[1].map((subCategory, idx) => (
+                            <SubCategory key={idx} subCategory={subCategory} />
+                        ))}
+                    </div>
+                    <h3 className="product-gen">Women</h3>
                     <div className="products-container">
                         {category[1].map((subCategory, idx) => (
                             <SubCategory key={idx} subCategory={subCategory} />
