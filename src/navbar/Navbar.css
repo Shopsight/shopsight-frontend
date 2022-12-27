@@ -44,16 +44,12 @@
     font-weight: 500;
 }
 
-@media only screen and (max-width: 500px) {
-    .navbar-container {
-        height: 50px;
-    }
+@media only screen and (max-width: 550px) {
     .navbar-wrapper {
-        padding: 10px 0;
-        height: 50px;
+        padding: 20px 20px;
     }
     .navbar-logo {
-        font-size: 24px;
+        display: none;
     }
     .navbar-menu-items {
         font-size: 12px;

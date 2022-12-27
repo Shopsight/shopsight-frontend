@@ -3,7 +3,7 @@ import "./Error.css";
 
 const Error = () => {
     return (
-        <div>
+        <div className="not-found-container">
             <h1>Oops!! You landed on wrong page</h1>
         </div>
     );
