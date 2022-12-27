@@ -15,6 +15,8 @@ import BrandProduct from "./brand/BrandProduct";
 import CategoryProduct from "./category/CategoryProduct";
 //product
 import Product from "./product/Product";
+//dashboard
+import Dashboard from "./profile/Dashboard";
 //error
 import Error from "./error/Error";
 //footer
@@ -74,6 +76,10 @@ function App() {
                     <Route path="/brand/:id" element={<BrandProduct />}></Route>
                     <Route path="/category/:id" element={<CategoryProduct />}></Route>
                     <Route path="/product/:id" element={<Product />}></Route>
+                    <Route
+                        path="/dashboard"
+                        element={userEmail ? <Dashboard /> : <Navigate to="/" />}
+                    ></Route>
                     <Route path="*" element={<Error />}></Route>
                 </Routes>
                 <Footer />

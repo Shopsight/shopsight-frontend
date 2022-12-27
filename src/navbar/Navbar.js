@@ -29,9 +29,14 @@ const Navigation = ({ userEmail, setUserEmail }) => {
                 </div>
                 <div className="navbar-right">
                     {userEmail ? (
-                        <div onClick={logout} className="navbar-menu-item">
-                            LOGOUT
-                        </div>
+                        <>
+                            <Link to="/dashboard" className="navbar-menu-item">
+                                DASHBOARD
+                            </Link>
+                            <div onClick={logout} className="navbar-menu-item">
+                                LOGOUT
+                            </div>
+                        </>
                     ) : (
                         <>
                             <Link to="/register" className="navbar-menu-item">
