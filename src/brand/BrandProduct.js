@@ -5,8 +5,8 @@ import ProductCard from "../components/ProductCard";
 const BrandProduct = () => {
     const location = useLocation();
     const brandId = location.pathname.split("/")[2];
-    const sizes = ["XS", "S", "M", "L", "XL"];
-    const colors = ["White", "Black", "Red", "Green", "Blue", "Yellow"];
+    const sizes = ["S", "M", "L", "XL"];
+    const colors = ["White", "Black", "Red", "Blue"];
 
     // 1-> Ascending order of price
     // -1 -> Descending order of price
