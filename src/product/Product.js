@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./Product.css";
+import Error from "../error/Error";
+import NotFound from "../error/NotFound";
 
 const Product = () => {
     const location = useLocation();
@@ -14,6 +16,9 @@ const Product = () => {
         color: "[]",
     });
 
+    const [error, setError] = useState(false);
+    const [notFound, setNotFound] = useState(false);
+
     const fetchProductInfo = async () => {
         try {
             const url = `${process.env.REACT_APP_SERVER_URL}/api/product/${productId}`;
@@ -21,9 +26,13 @@ const Product = () => {
             const data = await res.json();
             if (res.status === 200) {
                 setProduct(data.product);
+            } else if (res.status === 404) {
+                setNotFound(true);
+            } else {
+                setError(data.error);
             }
         } catch (err) {
-            // setProduct({});
+            setError("Something went wrong! Please try again");
         }
     };
 
@@ -31,6 +40,8 @@ const Product = () => {
         fetchProductInfo();
     }, []);
 
+    if (error) return <Error error={error} />;
+    if (notFound) return <NotFound />;
     return (
         <div>
             <div className="product-wrapper">

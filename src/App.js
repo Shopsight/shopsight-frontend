@@ -18,7 +18,7 @@ import Product from "./product/Product";
 //dashboard
 import Dashboard from "./profile/Dashboard";
 //error
-import Error from "./error/Error";
+import NotFound from "./error/NotFound";
 //footer
 import Footer from "./footer/Footer";
 
@@ -80,7 +80,7 @@ function App() {
                         path="/dashboard"
                         element={userEmail ? <Dashboard /> : <Navigate to="/" />}
                     ></Route>
-                    <Route path="*" element={<Error />}></Route>
+                    <Route path="*" element={<NotFound />}></Route>
                 </Routes>
                 <Footer />
             </Router>

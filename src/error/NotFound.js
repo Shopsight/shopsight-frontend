@@ -1,12 +1,11 @@
 import React from "react";
-import "./Error.css";
 
-const Error = ({ error }) => {
+const NotFound = () => {
     return (
         <div className="error-container">
-            <h1>{error}</h1>
+            <h1>Oops!! You landed on wrong page</h1>
         </div>
     );
 };
 
-export default Error;
+export default NotFound;

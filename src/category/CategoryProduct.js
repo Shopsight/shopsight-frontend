@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
+import Error from "../error/Error";
+import NotFound from "../error/NotFound";
 
 const CategoryProduct = () => {
     const location = useLocation();
     const categoryId = location.pathname.split("/")[2];
     const sizes = ["S", "M", "L", "XL"];
     const colors = ["White", "Black", "Red", "Blue"];
+
+    const [error, setError] = useState(false);
+    const [notFound, setNotFound] = useState(false);
 
     // 1-> Ascending order of price
     // -1 -> Descending order of price
@@ -49,10 +54,16 @@ const CategoryProduct = () => {
             const url = `${process.env.REACT_APP_SERVER_URL}/api/category/${categoryId}`;
             const res = await fetch(url);
             const data = await res.json();
-            setProducts(data.products);
-            setFilteredProducts(data.products);
+            if (res.status === 200) {
+                setProducts(data.products);
+                setFilteredProducts(data.products);
+            } else if (res.status === 404) {
+                setNotFound(true);
+            } else {
+                setError(data.error);
+            }
         } catch (err) {
-            // window.alert("Something went wrong");
+            setError("Something went wrong! Please try again");
         }
     };
 
@@ -60,6 +71,8 @@ const CategoryProduct = () => {
         fetchProducts();
     }, []);
 
+    if (error) return <Error error={error} />;
+    if (notFound) return <NotFound />;
     return (
         <div>
             <h1 className="products-title">Shirt</h1>
@@ -104,15 +117,10 @@ const CategoryProduct = () => {
             </div>
             <div>
                 <div className="products-container">
-                    {filteredProducts.length ? (
-                        <>
-                            {filteredProducts.map((product, index) => (
-                                <ProductCard product={product} key={index} />
-                            ))}
-                        </>
-                    ) : (
-                        <h1>Sorry! No Products Found...</h1>
-                    )}
+                    {filteredProducts.length &&
+                        filteredProducts.map((product, index) => (
+                            <ProductCard product={product} key={index} />
+                        ))}
                 </div>
             </div>
         </div>
