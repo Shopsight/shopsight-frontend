@@ -80,10 +80,10 @@ const Footer = () => {
                     <IoLocationSharp /> Raipur, India 493221
                 </div>
                 <div className="footer-contact-item">
-                    <FaPhoneAlt /> +91 9179054211
+                    <FaPhoneAlt /> +91 9981083277
                 </div>
                 <div className="footer-contact-item">
-                    <MdOutlineEmail /> shubhamank002@gmail.com
+                    <MdOutlineEmail /> varun.mishra@ssipmt.com
                 </div>
                 <img
                     src="https://i.ibb.co/Qfvn4z6/payment.png"
