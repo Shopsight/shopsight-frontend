@@ -75,9 +75,6 @@ const Register = () => {
                     <button className="auth-button" onClick={userRegister}>
                         REGISTER
                     </button>
-                    <Link to="/register" className="auth-link">
-                        CREATE A NEW ACCOUNT
-                    </Link>
                 </form>
             </div>
         </div>
