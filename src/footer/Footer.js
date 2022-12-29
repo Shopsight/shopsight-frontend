@@ -49,7 +49,9 @@ const Footer = () => {
                     <Link to="/dashboard" className="footer-list-item">
                         My Account
                     </Link>
-                    <li className="footer-list-item">Wishlist</li>
+                    <Link to="/brands" className="footer-list-item">
+                        Brands
+                    </Link>
                     <Link to="/terms-and-condition" className="footer-list-item">
                         Terms
                     </Link>

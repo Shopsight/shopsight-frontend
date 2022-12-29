@@ -36,6 +36,18 @@ body {
     justify-content: space-between;
 }
 
+.products-container .zero-products {
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.products-container .zero-products h1 {
+    text-align: center;
+}
+
 .filter-container {
     display: flex;
     justify-content: space-between;

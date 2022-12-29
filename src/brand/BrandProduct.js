@@ -18,11 +18,11 @@ const BrandProduct = () => {
     const [filter, setFilter] = useState({ color: "", size: "", sort: "0" });
 
     const [products, setProducts] = useState([]);
+    const [brandName, setBrandName] = useState("");
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     const handleFilterChange = (e) => {
         setFilter({ ...filter, [e.target.name]: e.target.value });
-        // console.log(e.target.name, e.target.value);
         setFilteredProducts(
             products.filter((product) => {
                 let f1 = filter.color === "" || product["color"].includes(filter.color);
@@ -57,6 +57,7 @@ const BrandProduct = () => {
             if (res.status === 200) {
                 setProducts(data.products);
                 setFilteredProducts(data.products);
+                setBrandName(data.brandName);
             } else if (res.status === 404) {
                 setNotFound(true);
             } else {
@@ -75,7 +76,7 @@ const BrandProduct = () => {
     if (notFound) return <NotFound />;
     return (
         <div>
-            <h1 className="products-title">Raymond</h1>
+            <h1 className="products-title">{brandName}</h1>
             <div className="filter-container">
                 <div className="filter">
                     <span className="filter-text">Filter Products:</span>
@@ -117,10 +118,15 @@ const BrandProduct = () => {
             </div>
             <div>
                 <div className="products-container">
-                    {filteredProducts.length &&
+                    {filteredProducts.length ? (
                         filteredProducts.map((product, index) => (
                             <ProductCard product={product} key={index} />
-                        ))}
+                        ))
+                    ) : (
+                        <div className="zero-products">
+                            <h1>Sorry! No Products Found</h1>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
