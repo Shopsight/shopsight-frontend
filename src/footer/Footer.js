@@ -19,7 +19,7 @@ const SocialIcon = styled.a`
 
 const Footer = () => {
     const shopSightDescription =
-        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.";
+        "Confused about finding the best products from nearby stores. No Worries!! Shopsight is here. Find the cheapest and finest products on our website along with their available location.";
     const socialLinks = [
         {
             icon: <FaFacebookF />,
