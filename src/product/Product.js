@@ -52,9 +52,10 @@ const Product = () => {
                     <img src={product.imageLink} alt={product.name} className="product-image" />
                 </div>
                 <div className="product-info-container">
+                    <h1 className="product-brand-title">{product.brandName}</h1>
                     <h1 className="product-title">{product.name}</h1>
                     <p className="product-description">{product.description}</p>
-                    <span className="product-price">$ {product.price}</span>
+                    <span className="product-price">Rs. {product.price}</span>
                     <div className="product-filter-container">
                         <div className="product-filter">
                             <div className="product-filter-title">Available Sizes</div>
@@ -70,7 +71,7 @@ const Product = () => {
                     <div className="product-location-container">
                         <div className="product-location-title">Available here</div>
                         <div className="product-location-main">
-                            Buy directly from {product.mallName} at {product.location}
+                            {product.mallName} at {product.location}
                         </div>
                     </div>
                 </div>

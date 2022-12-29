@@ -17,6 +17,11 @@
     padding: 0 50px;
 }
 
+.product-brand-title {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
 .product-title {
     font-weight: 200;
 }
@@ -57,11 +62,11 @@
     color: #454545;
     padding: 10px 15px;
     border-radius: 8px;
-    font-size: 25px;
+    font-size: 20px;
     box-shadow: 0 0 10px rgb(0 0 0 / 10%);
     width: fit-content;
     margin-bottom: 20px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .product-location-main {
