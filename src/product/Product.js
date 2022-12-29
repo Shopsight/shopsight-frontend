@@ -14,6 +14,8 @@ const Product = () => {
         price: "",
         size: "[]",
         color: "[]",
+        location: "",
+        mallName: "",
     });
 
     const [error, setError] = useState(false);
@@ -26,6 +28,7 @@ const Product = () => {
             const data = await res.json();
             if (res.status === 200) {
                 setProduct(data.product);
+                console.log(data.product);
             } else if (res.status === 404) {
                 setNotFound(true);
             } else {
@@ -54,7 +57,7 @@ const Product = () => {
                     <span className="product-price">$ {product.price}</span>
                     <div className="product-filter-container">
                         <div className="product-filter">
-                            <div className="product-filter-title">Size</div>
+                            <div className="product-filter-title">Available Sizes</div>
                             <select className="product-filter-size">
                                 {JSON.parse(product.size).map((size, index) => (
                                     <option key={index} value={size}>
@@ -62,6 +65,12 @@ const Product = () => {
                                     </option>
                                 ))}
                             </select>
+                        </div>
+                    </div>
+                    <div className="product-location-container">
+                        <div className="product-location-title">Available here</div>
+                        <div className="product-location-main">
+                            Buy directly from {product.mallName} at {product.location}
                         </div>
                     </div>
                 </div>
