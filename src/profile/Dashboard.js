@@ -56,7 +56,9 @@ const Dashboard = () => {
                                         </Link>
                                         <div className="product-card-info">
                                             <div className="product-card-info-left">
-                                                <div className="product-card-brand">Raymond</div>
+                                                <div className="product-card-brand">
+                                                    {product.brandName}
+                                                </div>
                                                 <div className="product-card-name">
                                                     {product.name}
                                                 </div>

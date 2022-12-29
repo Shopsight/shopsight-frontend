@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { UserContext } from "../context/UserContext";
@@ -21,7 +21,7 @@ import "./ProductCard.css";
 // };
 
 const ProductCard = ({ product }) => {
-    const { favourites, setFavourites } = useContext(UserContext);
+    const { favourites, userEmail, setFavourites } = useContext(UserContext);
     const [favourite, setFavourite] = useState(false);
     const removeFavourite = async () => {
         const token = localStorage.getItem("shopsight_usertoken");
@@ -99,15 +99,21 @@ const ProductCard = ({ product }) => {
             </Link>
             <div className="product-card-info">
                 <div className="product-card-info-left">
-                    <div className="product-card-brand">Raymond</div>
+                    <div className="product-card-brand">{product.brandName}</div>
                     <div className="product-card-name">{product.name}</div>
                     <div className="product-card-price">Rs. {product.price}</div>
                 </div>
                 <div className="product-card-right">
-                    {favourite || (favourites && favourites.has(String(product.id))) ? (
-                        <BsHeartFill onClick={removeFavourite} />
+                    {userEmail ? (
+                        <>
+                            {favourite || (favourites && favourites.has(String(product.id))) ? (
+                                <BsHeartFill onClick={removeFavourite} />
+                            ) : (
+                                <BsHeart onClick={addFavourite} />
+                            )}
+                        </>
                     ) : (
-                        <BsHeart onClick={addFavourite} />
+                        <></>
                     )}
                 </div>
             </div>
