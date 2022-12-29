@@ -2,6 +2,7 @@ import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../../data";
+import { Link } from "react-router-dom";
 
 const Arrow = styled.div`
     width: 50px;
@@ -61,7 +62,9 @@ const Slider = () => {
                         <div className="slider-info-container">
                             <h1 className="slider-title">{item.title}</h1>
                             <div className="slider-description">{item.desc}</div>
-                            <button className="slider-button">SHOW NOW</button>
+                            <Link to="/brands" className="slider-button">
+                                SHOW NOW
+                            </Link>
                         </div>
                     </Slide>
                 ))}
