@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import "./Footer.css";
 
-const SocialIcon = styled.div`
+const SocialIcon = styled.a`
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -21,10 +21,22 @@ const Footer = () => {
     const shopSightDescription =
         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.";
     const socialLinks = [
-        { icon: <FaFacebookF />, color: "3B5999" },
-        { icon: <FaInstagram />, color: "E4405F" },
-        { icon: <FaTwitter />, color: "55ACEE" },
-        { icon: <FaPinterestP />, color: "E60023" },
+        {
+            icon: <FaFacebookF />,
+            color: "3B5999",
+            link: "https://www.facebook.com/varunmishrak999",
+        },
+        {
+            icon: <FaInstagram />,
+            color: "E4405F",
+            link: "https://www.instagram.com/varunmishrak999",
+        },
+        { icon: <FaTwitter />, color: "55ACEE", link: "https://twitter.com/varunmishra999" },
+        {
+            icon: <FaPinterestP />,
+            color: "E60023",
+            link: "https://in.pinterest.com/varunmishrak999/",
+        },
     ];
 
     return (
@@ -34,7 +46,12 @@ const Footer = () => {
                 <p className="footer-description">{shopSightDescription}</p>
                 <div className="footer-social-container">
                     {socialLinks.map((social, index) => (
-                        <SocialIcon key={index} color={social.color}>
+                        <SocialIcon
+                            key={index}
+                            color={social.color}
+                            href={social.link}
+                            target="_blank"
+                        >
                             {social.icon}
                         </SocialIcon>
                     ))}
