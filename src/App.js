@@ -17,6 +17,7 @@ import CategoryProduct from "./category/CategoryProduct";
 import Product from "./product/Product";
 //dashboard
 import Dashboard from "./profile/Dashboard";
+import FavouriteBrand from "./profile/FavouriteBrand";
 //error
 import NotFound from "./error/NotFound";
 //footer
@@ -79,6 +80,10 @@ function App() {
                     <Route
                         path="/dashboard"
                         element={userEmail ? <Dashboard /> : <Navigate to="/" />}
+                    ></Route>
+                    <Route
+                        path="/favourites"
+                        element={userEmail ? <FavouriteBrand /> : <Navigate to="/login" />}
                     ></Route>
                     <Route path="*" element={<NotFound />}></Route>
                 </Routes>

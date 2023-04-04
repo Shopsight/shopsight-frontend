@@ -21,6 +21,9 @@ const Navigation = ({ userEmail, setUserEmail }) => {
                     <Link to="/brands" className="navbar-menu-item">
                         BRANDS
                     </Link>
+                    <Link to="/favourites" className="navbar-menu-item">
+                        FAVOURITES
+                    </Link>
                 </div>
                 <div className="navbar-center">
                     <Link to="/" className="navbar-logo">
