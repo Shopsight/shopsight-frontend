@@ -45,8 +45,8 @@ const FavouriteBrand = () => {
                         <h1 className="products-title">Your Favourite Brands</h1>
                         <div className="products-container">
                             {user.favourites &&
-                                user.favourites.map((brand) => (
-                                    <div className="brand-card-container">
+                                user.favourites.map((brand, index) => (
+                                    <div key={index} className="brand-card-container">
                                         <Link
                                             to={`/brand/${brand[0].brandId}`}
                                             className="brand-card-image"
