@@ -24,18 +24,18 @@ const Footer = () => {
         {
             icon: <FaFacebookF />,
             color: "3B5999",
-            link: "https://www.facebook.com/varunmishrak999",
+            link: "https://www.facebook.com",
         },
         {
             icon: <FaInstagram />,
             color: "E4405F",
-            link: "https://www.instagram.com/varunmishrak999",
+            link: "https://www.instagram.com",
         },
-        { icon: <FaTwitter />, color: "55ACEE", link: "https://twitter.com/varunmishra999" },
+        { icon: <FaTwitter />, color: "55ACEE", link: "https://twitter.com" },
         {
             icon: <FaPinterestP />,
             color: "E60023",
-            link: "https://in.pinterest.com/varunmishrak999/",
+            link: "https://in.pinterest.com",
         },
     ];
 
@@ -80,10 +80,10 @@ const Footer = () => {
                     <IoLocationSharp /> Raipur, India 493221
                 </div>
                 <div className="footer-contact-item">
-                    <FaPhoneAlt /> +91 9981083277
+                    <FaPhoneAlt /> +91 9876543210
                 </div>
                 <div className="footer-contact-item">
-                    <MdOutlineEmail /> varun.mishra@ssipmt.com
+                    <MdOutlineEmail /> abcd@gmail.com
                 </div>
                 <img
                     src="https://i.ibb.co/Qfvn4z6/payment.png"
